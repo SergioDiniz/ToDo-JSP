@@ -10,7 +10,8 @@ public class ConnectionJDBC {
 	private final String user = "postgres";
 	private final String password = "12345";
 	
-	public Connection createConnection() throws SQLException{
+	public Connection createConnection() throws SQLException, ClassNotFoundException{
+		Class.forName("org.postgresql.Driver");
 		Connection con = DriverManager.getConnection(url, user, password);
 		System.out.println("DB Connected!");
 		return con;

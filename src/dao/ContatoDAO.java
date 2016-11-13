@@ -12,7 +12,7 @@ public class ContatoDAO {
 
 	private Connection con;
 
-	public ContatoDAO() throws SQLException {
+	public ContatoDAO() throws SQLException, ClassNotFoundException {
 		this.con = new ConnectionJDBC().createConnection();
 	}
 	

@@ -9,7 +9,7 @@ import dao.ContatoDAO;
 
 public class TestConnection {
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 //		Connection con = new ConnectionJDBC().createConnection();
 //		con.close();

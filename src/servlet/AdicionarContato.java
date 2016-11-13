@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
+
+import beans.Contato;
+import dao.ContatoDAO;
 
 /**
  * Servlet implementation class AdicionarContato
@@ -34,6 +39,7 @@ public class AdicionarContato extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ParseException {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		PrintWriter out = response.getWriter();
 		
 		
 		String nome =  request.getParameter("nome");
@@ -52,8 +58,27 @@ public class AdicionarContato extends HttpServlet {
 		dataNascimento.setTime(date);
 		
 		
+		Contato contato = new Contato();
+		contato.setNome(nome);
+		contato.setEmail(email);
+		contato.setEndereco(endereco);
+		contato.setDataNascimento(dataNascimento);
 		
-		System.out.println("nome: " + nome + ", email: " + email + ", endereço: " + endereco + "Data nascimento: " + dataNascimento);
+		
+		try {
+			
+			ContatoDAO contatoDAO = new ContatoDAO();
+			contatoDAO.adicionar(contato);
+			
+			out.println("Cadastrado!");
+			
+		} catch (SQLException | ClassNotFoundException e) {
+			out.println("ERROR!" + e.getMessage());
+			
+		}
+		
+		
+		
 		
 	}
 

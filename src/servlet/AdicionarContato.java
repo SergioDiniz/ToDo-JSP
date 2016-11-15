@@ -37,8 +37,18 @@ public class AdicionarContato extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ParseException {
-		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
+		
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		PrintWriter out = response.getWriter();
 		
 		
@@ -73,21 +83,11 @@ public class AdicionarContato extends HttpServlet {
 			out.println("Cadastrado!");
 			
 		} catch (SQLException | ClassNotFoundException e) {
-			out.println("ERROR!" + e.getMessage());
+			//out.println("ERROR!" + e.getMessage());
+			throw new ServletException(e);
 			
 		}
 		
-		
-		
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }

@@ -119,7 +119,26 @@ public class ContatoDAO {
 		}
 	}
 	
-	public void atualizar(Contato contato){
+	public void atualizar(Contato contato) throws SQLException{
+		String sql = "update contatos set nome = ?, email = ?, endereco = ?, data_nascimento = ? "
+				+ "where id = ?";
+		
+		try {
+			PreparedStatement stat = con.prepareStatement(sql);
+			stat.setString(1, contato.getNome());
+			stat.setString(2, contato.getEmail());
+			stat.setString(3, contato.getEndereco());
+			stat.setDate(4, new Date(contato.getDataNascimento().getTimeInMillis()));
+			stat.setLong(5, contato.getId());
+			
+			stat.execute();
+			stat.close();
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally{
+			con.close();
+		}
 		
 	}
 	

@@ -80,7 +80,9 @@ public class AdicionarContato extends HttpServlet {
 			ContatoDAO contatoDAO = new ContatoDAO();
 			contatoDAO.adicionar(contato);
 			
-			out.println("Cadastrado!");
+//			out.println("Cadastrado!");
+			
+			response.sendRedirect("listar-contatos.jsp");
 			
 		} catch (SQLException | ClassNotFoundException e) {
 			//out.println("ERROR!" + e.getMessage());

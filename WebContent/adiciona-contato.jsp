@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html lang="en">
@@ -25,8 +26,8 @@
 		    	<input type="email" class="form-control input-lg" id="email" name="email" placeholder="E-mail">
 	    	</div>
 	    	<div class="form-group">
-				<label for="endereco">Endereço:</label>
-		    	<input type="text" class="form-control input-lg" id="endereco" name="endereco" placeholder="Endereço">
+				<label for="endereco">EndereÃ§o:</label>
+		    	<input type="text" class="form-control input-lg" id="endereco" name="endereco" placeholder="EndereÃ§o">
 	    	</div>
 	    	<div class="form-group">
 				<label for="dataNascimento">Data de Nascimento:</label>
@@ -35,5 +36,9 @@
 			<input type="submit" class="btn btn-primary btn-lg" value="Gravar"/>
 		</form>
 	</div>
+	
+	<script type="text/javascript">
+		$("#dataNascimento").datepicker();
+	</script>
 </body>
 </html>

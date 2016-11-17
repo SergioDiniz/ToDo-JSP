@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="stylesheet" href="css/jquery-ui.theme.css" />
 <link rel="stylesheet" href="css/estilo.css" />
 <title></title>
 </head>
@@ -32,6 +34,7 @@
 
 
 	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/jquery-ui.js""></script>
 	<script src="js/bootstrap.js"></script>
 </body>
 </html>

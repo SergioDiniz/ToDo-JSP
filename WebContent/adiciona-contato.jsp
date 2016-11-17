@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,6 +8,9 @@
 	<link rel="stylesheet" href="css/estilo.css" />
 </head>
 <body>
+
+	<c:import url="cabecalho.jsp"></c:import>
+
 	<div class="col-md-offset-3 col-md-6">
 		
 		<h2 class="text-center">Novo Contato</h2>
